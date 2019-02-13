@@ -1,0 +1,64 @@
+html {
+    margin:0;
+    padding:0;
+    background: url("http://hdqwalls.com/wallpapers/galaxy-dark-space-cb.jpg") no-repeat center fixed; 
+    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+    background-size: cover;
+}
+
+table {
+    margin-top: 5%;
+    width: 100%;
+}
+
+td {
+    border-radius: 2%;
+    width: 5%;
+}
+
+td h2 {
+    text-align: center;
+}
+
+.mass {
+    text-align: right;
+    margin: 2%;
+}
+
+.num {
+    text-align: right;
+    margin: 2%;
+}
+
+.title {
+    text-align: center;
+    color: white;
+}
+
+.green{background-color: hsla(120, 37%, 47%, 0.507);}
+.greenmore{background-color: hsla(120, 38%, 18%, 0.507);}
+.grey{background-color: rgba(88, 88, 88, 0.603);}
+.red{background-color: rgba(167, 70, 70, 0.616);}
+.salmon{background-color: rgba(172, 128, 128, 0.616);}
+.blue{background-color: rgba(70, 136, 167, 0.616);}
+.purple{background-color: rgba(108, 90, 138, 0.616);}
+.orange{background-color: rgba(168, 140, 78, 0.616);}
+
+@media screen and (min-width: 200px) and (max-width: 640px) {
+    h1 {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+
+    .num {
+        font-size: 10px;
+    }
+
+    .mass {
+        font-size: 10px;
+    }
+  }
