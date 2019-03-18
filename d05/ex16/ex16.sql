@@ -1,0 +1,1 @@
+SELECT COUNT(date) FROM historique_membre WHERE (date > '2006-10-06' AND date < '2007-07-27') OR DATE(date) LIKE '%-12-24';
