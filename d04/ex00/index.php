@@ -6,13 +6,13 @@
       $_SESSION['login'] = $_GET['login'];
     if (!empty($_GET['passwd']) && isset($_GET['passwd']))
       $_SESSION['passwd'] = $_GET['passwd'];
-    $login = '';
-    $pwd = '';
-    if ($_SESSION['login'])
-      $login = $_SESSION['login'];
-    if ($_SESSION['passwd'])
-      $pwd = $_SESSION['passwd'];
   }
+  $login = '';
+  $pwd = '';
+  if ($_SESSION['login'])
+    $login = $_SESSION['login'];
+  if ($_SESSION['passwd'])
+    $pwd = $_SESSION['passwd'];
 ?>
 <!doctype html>
 <html lang="fr-FR">
@@ -30,3 +30,4 @@
     </form>
   </body>
 </html>
+<?php echo "\n" ?>
