@@ -6,7 +6,6 @@ body {
 
 nav {
     width: 100%;
-    background-color: rgba(68, 68, 68, 0.575);
 }
 
 /* Des enfants directs de notre élément nav */
@@ -22,7 +21,7 @@ nav > ul > li {
 
 nav ul li a {
     padding: 20px 30px;
-    color: white;
+    color: black;
 }
 
 /* Eviter que la liste collapse rétabli la hauteur du menu*/
@@ -90,4 +89,16 @@ nav a {
 
 .item3 .submenu {
     background-color: rgba(160, 119, 187, 0.774);
+}
+
+.item1 .submenu li:hover {
+    background-color: rgba(224, 130, 130, 1);
+}
+
+.item2 .submenu li:hover {
+    background-color: rgba(116, 179, 116, 1);
+}
+
+.item3 .submenu li:hover {
+    background-color: rgba(160, 119, 187, 1);
 }

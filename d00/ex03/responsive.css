@@ -7,7 +7,7 @@ html {
 }
 
 table {
-    margin-top: 5%;
+    margin-top: 6%;
     width: 100%;
 }
 
@@ -18,21 +18,36 @@ td {
 
 td h2 {
     font-size: 2vh;
+    font-size: 2vw;
     text-align: center;
 }
 
+.smalltitle {
+    display: none;
+}
+
 .mass {
+    font-size: 1vh;
+    font-size: 1vw;
     text-align: right;
     margin: 2%;
 }
 
 .num {
+    font-size: 1vh;
+    font-size: 1vw;
     text-align: right;
     margin: 2%;
 }
 
+.small {
+    color: rgb(241, 101, 101);
+}
+
 .title {
     text-align: center;
+    font-size: 4vw;
+    font-size: 4vh;
     color: white;
 }
 
@@ -45,21 +60,25 @@ td h2 {
 .purple{background-color: rgba(108, 90, 138, 0.616);}
 .orange{background-color: rgba(168, 140, 78, 0.616);}
 
-@media screen and (min-width: 100px) and (max-width: 640px) {
-    h1 {
+.green:hover{background-color: hsla(120, 37%, 47%, 0.8);}
+.greenmore:hover{background-color: hsla(120, 38%, 18%, 0.8);}
+.grey:hover{background-color: rgba(88, 88, 88, 0.8);}
+.red:hover{background-color: rgba(167, 70, 70, 0.8);}
+.salmon:hover{background-color: rgba(172, 128, 128, 0.8);}
+.blue:hover{background-color: rgba(70, 136, 167, 0.8);}
+.purple:hover{background-color: rgba(108, 90, 138, 0.8);}
+.orange:hover {background-color: rgba(168, 140, 78, 0.8);} 
+
+@media screen and (min-width: 100px) and (max-width: 700px) {
+    .smalltitle {
         text-align: center;
-        font-size: 20px;
+        font-size: 4vw;
+        font-size: 4vh;
+        color: white;
+        display: block;
     }
 
-    h2 {
-        font-size: 15px;
+    .title {
+        display: none;
     }
-
-    .num {
-        font-size: 10px;
-    }
-
-    .mass {
-        font-size: 10px;
-    }
-  }
+}

@@ -23,6 +23,10 @@ header {
     border-radius: 10px;
 }
 
+.eye {
+    border: 5px solid red; border-radius: 10px;
+}
+
 .shadow {
     box-shadow: 10px 10px 10px black;
 	-moz-box-shadow: 10px 10px 5px 0px black;
@@ -124,16 +128,25 @@ header {
 	left: -42px;
 	padding-left: 10px;
 	background-color: rgb(136, 255, 137);
-    font-family: Times;
-    font-size: 20px;
+    font-family: sans-serif;
+    font-size: 19px;
     line-height: 25px;
 }
 
 .enter {
     font-size: 40px;
+    font-family: serif;
 }
 
 
 input { 
     width: 380px;
+}
+
+.book, .towel {
+    padding-left: 25px;
+}
+
+.shatxt {
+    text-shadow: 5px 5px 5px red;
 }
