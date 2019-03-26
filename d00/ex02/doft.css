@@ -19,12 +19,26 @@ header {
     height: 110px;
 }
 
+button {
+    border: 1px solid rgb(150, 150, 150);
+    font-size: 13px;
+    letter-spacing: 0.7px;
+    width: 80px;
+    height: 20px;
+    margin: 2px;
+    margin-left: 10px;
+    border-radius: 2px;
+    background: -webkit-linear-gradient(top, #f5f7f6 1%,#e2e2e2 100%);
+    margin-left: 4px;
+}
+
 .rad {
     border-radius: 10px;
 }
 
 .eye {
-    border: 5px solid red; border-radius: 10px;
+    border: 5px solid red;
+    border-radius: 10px;
 }
 
 .shadow {
@@ -43,17 +57,17 @@ header {
 
 .reload {
     height: auto;
-    width: 18px;
+    width: 20px;
     float: right;
-    margin-right: 5px;
+    margin-right: 7px;
 }
 
 .cross {
     bottom: 1px;
     height: auto;
-    width: 17px;
+    width: 20px;
     position: absolute;
-    margin-right: 5px;
+    margin-right: 7px;
     right: 0;
 }
 
@@ -112,7 +126,7 @@ header {
 .middle .float {
 	float: left;
 }
-
+ 
 .middle {
 	margin-top: 20px;
 	width: 100%;
@@ -128,18 +142,25 @@ header {
 	left: -42px;
 	padding-left: 10px;
 	background-color: rgb(136, 255, 137);
-    font-family: sans-serif;
-    font-size: 19px;
-    line-height: 25px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 20px;
 }
+
+.greenbox p{
+    margin-bottom: 0;
+    margin-top: 10;
+ }
 
 .enter {
     font-size: 40px;
     font-family: serif;
+    font-weight: none;
 }
 
 
-input { 
+input {
+    box-shadow: 0px 0px 4px #A8A4A5;
     width: 380px;
 }
 
@@ -148,5 +169,5 @@ input {
 }
 
 .shatxt {
-    text-shadow: 5px 5px 5px red;
+    text-shadow: 7px 7px 10px red;
 }

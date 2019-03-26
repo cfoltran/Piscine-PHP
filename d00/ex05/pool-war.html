@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Day of the 42</title>
+</head>
+<body>
+    <style>
+        #playground {
+            background-image: url('resources/swim.jpg');
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+        .monster {
+            display: inline-block;
+            background-image: url('resources/swimmer.png');
+            background-repeat: no-repeat;
+			background-size: contain;
+            height: 10%;
+            width: 10%;
+        }
+    </style>
+    <div>score : <span id='score'>0</span></div>
+    <div id="playground">
+        <div class="monster" style="position:absolute"></div>
+    </div>
+</body>
+</html>
+	
+<script>
+    var playground = document.getElementById('playground');
+    var monster = document.querySelectorAll('.monster')[0];
+    
+    function Monstre(){
+        this.element = monster.cloneNode(true);
+        playground.appendChild(this.element);
+        
+        this.topMax = playground.offsetHeight-this.element.offsetHeight
+        this.topMin = 0;
+        this.leftMax = playground.offsetWidth-this.element.offsetWidth
+        this.leftMin = 0;
+        
+        this.top = this.randomDist('top')
+        this.left = this.randomDist('left')
+        var style = this.element.style
+        style.top = this.top+'px';
+        style.left = this.left+'px';
+        
+        this.element.toMonstre = this;
+        
+        this.timer = setTimeout(function() {
+            gameOver()
+        }, 5000);            
+
+        this.element.addEventListener('click', function() {
+            var monstre = this.toMonstre
+            score.add(1);
+            clearTimeout(monstre.timer);
+            this.remove()
+        });
+        
+        this.age = setTimeout(function(){style.backgroundImage="url('resources/swimmer_.png')"}, 3500)
+    }
+    
+    Monstre.prototype.randomDist = function(cote) {
+        var max = this[cote+'Max']
+        var min = this[cote+'Min']
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    
+    playground.removeChild(monster)
+    
+    for (var i = 0; i < 2 ;i++){
+        var monstre = new Monstre
+    }
+    
+    var horloge;
+    var time = 0;
+    var ticTac = 500;
+    
+    function action(){
+        time += 1
+        if (time % 2 == 0) new Monstre;
+        horloge = setTimeout(function() { 
+            action();
+        }, ticTac);
+    }
+    
+    action();
+
+    var score = {
+        valeur : 0,
+        element : document.getElementById('score'),
+        add : function(points){
+            this.valeur += points
+            this.element.innerHTML = this.valeur
+        }
+    }
+    
+    var end = false;
+    
+    function gameOver() {
+        if (!end) {
+            end = true
+            alert('End of the game');
+            clearTimeout(horloge)
+        }
+    }
+</script>
