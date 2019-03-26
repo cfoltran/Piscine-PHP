@@ -1,11 +1,9 @@
 #!/usr/bin/php
 <?php
-    while (true)
+    echo 'Entrez un nombre: ';
+    while ($input = fgets(STDIN))
     {
-        echo 'Entrez un nombre: ';
-        $param = trim(fgets(STDIN));
-        if (feof(STDIN) == true)
-            exit();
+        $param = trim($input);
         if (is_numeric($param))
         {
             if (substr($param, -1) % 2 == 0)
@@ -15,5 +13,7 @@
         }
         else
             echo "'".$param."' n'est pas un chiffre\n";
+        echo 'Entrez un nombre: ';
     }
+    echo "\n";
 ?>

@@ -1,6 +1,6 @@
 #!/usr/bin/php
 <?php
-    if ($argc > 1)
-        for ($i = 1; $i < $argc; $i++)
-            echo $argv[$i] . "\n";
+    array_shift($argv);
+    foreach ($argv as $value)
+        echo $value . "\n";
 ?>

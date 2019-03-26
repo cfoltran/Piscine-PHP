@@ -18,7 +18,8 @@
                 ($sign == '%') ? print_r($array[0] % $array[1] . "\n") : 0;
             } else
                 echo "Syntax error\n";
-        }
+        } else
+            echo "Syntax error\n";
     } else
         die("Incorrect Parameters\n");
 ?>
