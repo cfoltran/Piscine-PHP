@@ -1,24 +1,38 @@
 #!/usr/bin/php
 <?php
-    if ($argc > 1)
-    {
-        $array = array();
-        for ($i = 1; $i < $argc; $i++)
-            $array = array_merge($array, explode(' ', preg_replace('/ +/', ' ', trim($argv[$i]))));
-        sort($array);
-        $sort = array(array(), array(), array());
-        foreach ($array as $elem) {
-            if (is_numeric($elem))
-                array_push($sort[1], $elem);
-            else if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $elem))
-                array_push($sort[2], $elem);
-            else
-                array_push($sort[0], $elem);
+    function compare($s1, $s2) {
+        for ($i = 0; ($i < strlen($s1) && $i < strlen($s2)); $i++) {
+            if ($s1[$i] == $s2[$i])
+                continue ;
+            if (ctype_alpha($s1[$i])) {
+                if (ctype_alpha($s2[$i])) {
+                    if (strcmp(strtolower($s1[$i]), strtolower($s2[$i])) == 0)
+                        continue ;
+                    return (strcmp(strtolower($s1[$i]), strtolower($s2[$i])));
+                }
+                return (-1);
+            } else if (is_numeric($s1[$i])) {
+                if (ctype_alpha($s2[$i]))
+                    return (1);
+                else if (is_numeric($s2[$i]))
+                    return (strcmp($s1[$i], $s2[$i]));
+                return (-1);
+            } else {
+                if (!ctype_alpha($s2[$i]) && !is_numeric($s2[$i]))
+                    return (strcmp($s1[$i], $s2[$i]));
+                return (1);
+            }
         }
-        for ($i = 0; $i < count($sort); $i++)
-            usort($sort[$i], "strcasecmp");
-        $array = array_merge($sort[0], $sort[1]);
-        $array = array_merge($array, $sort[2]);
-        print_r($array);
+        return (strlen($s1) - strlen($s2));
+    }
+    
+    if ($argc  > 1) {
+        $array = [];
+        array_shift($argv);
+        foreach ($argv as $arg)
+            $array = array_merge($array, array_filter(explode(" ", trim($arg)), "strlen"));
+        usort($array, 'compare');
+        foreach ($array as $value)
+            echo "$value\n";
     }
 ?>
