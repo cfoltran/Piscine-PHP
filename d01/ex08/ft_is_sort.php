@@ -1,16 +1,12 @@
-#!/usr/bin/php
 <?php
-    function desc($array) {
-        rsort($array);
-        return $array;
-    }
-
-    function asc($array) {
-        sort($array);
-        return $array;
-    }
-    
     function ft_is_sort($array) {
-        return ((desc($array) === $array) || (asc($array) === $array)) ? 1 : 0;
+        $save = $array;
+        sort($array);
+        if ($save === $array)
+            return (1);
+        rsort($array);
+        if ($array === $save)
+            return (1);
+        return (0);
     }
 ?>

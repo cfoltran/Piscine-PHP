@@ -274,110 +274,110 @@ if ($req == "") {
 	echo "\033[31m[FAUX]\033[0m\n";
 }
 
-// echo "\033[35m-------------------------------------------ex11------------------------------------\033[0m\n";
-// echo "test 1 : ";
-// $req = shell_exec('./ex11/do_op_2.php');
-// if ($req == "Incorrect Parameters\n") {
-// 	echo "\033[32m[OK]\033[0m\n";
-// } else {
-// 	echo "\033[31m[FAUX]\033[0m\n";
-// }
+echo "\033[35m-------------------------------------------ex11------------------------------------\033[0m\n";
+echo "test 1 : ";
+$req = shell_exec('./ex11/do_op_2.php');
+if ($req == "Incorrect Parameters\n") {
+	echo "\033[32m[OK]\033[0m\n";
+} else {
+	echo "\033[31m[FAUX]\033[0m\n";
+}
 
-// echo "test 2 : ";
-// $req = shell_exec('./ex11/do_op_2.php toto');
-// if ($req == "Syntax Error\n") {
-// 	echo "\033[32m[OK]\033[0m\n";
-// } else {
-// 	echo "\033[31m[FAUX]\033[0m\n";
-// }
+echo "test 2 : ";
+$req = shell_exec('./ex11/do_op_2.php toto');
+if ($req == "Syntax Error\n") {
+	echo "\033[32m[OK]\033[0m\n";
+} else {
+	echo "\033[31m[FAUX]\033[0m\n";
+}
 
-// echo "test 3 : ";
-// $req = shell_exec('./ex11/do_op_2.php "42*2"');
-// if ($req == "84\n") {
-// 	echo "\033[32m[OK]\033[0m\n";
-// } else {
-// 	echo "\033[31m[FAUX]\033[0m\n";
-// }
+echo "test 3 : ";
+$req = shell_exec('./ex11/do_op_2.php "42*2"');
+if ($req == "84\n") {
+	echo "\033[32m[OK]\033[0m\n";
+} else {
+	echo "\033[31m[FAUX]\033[0m\n";
+}
 
-// echo "test 4 : ";
-// $req = shell_exec('./ex11/do_op_2.php " 42 / 2 "');
-// if ($req == "21\n") {
-// 	echo "\033[32m[OK]\033[0m\n";
-// } else {
-// 	echo "\033[31m[FAUX]\033[0m\n";
-// }
+echo "test 4 : ";
+$req = shell_exec('./ex11/do_op_2.php " 42 / 2 "');
+if ($req == "21\n") {
+	echo "\033[32m[OK]\033[0m\n";
+} else {
+	echo "\033[31m[FAUX]\033[0m\n";
+}
 
-// echo "test 5 : ";
-// $req = shell_exec('./ex11/do_op_2.php "six6*7sept"');
-// if ($req == "Syntax Error\n") {
-// 	echo "\033[32m[OK]\033[0m\n";
-// } else {
-// 	echo "\033[31m[FAUX]\033[0m\n";
-// }
+echo "test 5 : ";
+$req = shell_exec('./ex11/do_op_2.php "six6*7sept"');
+if ($req == "Syntax Error\n") {
+	echo "\033[32m[OK]\033[0m\n";
+} else {
+	echo "\033[31m[FAUX]\033[0m\n";
+}
 
-// echo "test 6 : ";
-// $req = shell_exec('./ex11/do_op_2.php 42 "% " p');
-// if ($req == "Incorrect Parameters\n") {
-// 	echo "\033[32m[OK]\033[0m\n";
-// } else {
-// 	echo "\033[31m[FAUX]\033[0m\n";
-// }
+echo "test 6 : ";
+$req = shell_exec('./ex11/do_op_2.php 42 "% " p');
+if ($req == "Incorrect Parameters\n") {
+	echo "\033[32m[OK]\033[0m\n";
+} else {
+	echo "\033[31m[FAUX]\033[0m\n";
+}
 
-// echo "test 9 : ";
-// $req = shell_exec('./ex11/do_op_2.php "15 / 0"');
-// if ($req == "") {
-// 	echo "\033[32m[OK]\033[0m\n";
-// } else {
-// 	echo "\033[31m[FAUX]\033[0m\n";
-// }
+echo "test 9 : ";
+$req = shell_exec('./ex11/do_op_2.php "15 / 0"');
+if ($req == "") {
+	echo "\033[32m[OK]\033[0m\n";
+} else {
+	echo "\033[31m[FAUX]\033[0m\n";
+}
 
-// echo "test 10 : ";
-// $req = shell_exec('./ex11/do_op_2.php "15 % 0"');
-// if ($req == "") {
-// 	echo "\033[32m[OK]\033[0m\n";
-// } else {
-// 	echo "\033[31m[FAUX]\033[0m\n";
-// }
+echo "test 10 : ";
+$req = shell_exec('./ex11/do_op_2.php "15 % 0"');
+if ($req == "") {
+	echo "\033[32m[OK]\033[0m\n";
+} else {
+	echo "\033[31m[FAUX]\033[0m\n";
+}
 
-// echo "\033[35m-------------------------------------------ex12------------------------------------\033[0m\n";
-// $req = shell_exec('./ex12/search_it!.php toto');
-// echo "test 1 : ";
-// if ($req == "") {
-// 	echo "\033[32m[OK]\033[0m\n";
-// } else {
-// 	echo "\033[31m[FAUX]\033[0m\n";
-// }
-// echo "test 2 : ";
-// $req = shell_exec('./ex12/search_it!.php toto "key1:val1" "key2:val2" "toto:42" ');
-// if ($req == "42\n") {
-// 	echo "\033[32m[OK]\033[0m\n";
-// } else {
-// 	echo "\033[31m[FAUX]\033[0m\n";
-// }
+echo "\033[35m-------------------------------------------ex12------------------------------------\033[0m\n";
+$req = shell_exec('./ex12/search_it!.php toto');
+echo "test 1 : ";
+if ($req == "") {
+	echo "\033[32m[OK]\033[0m\n";
+} else {
+	echo "\033[31m[FAUX]\033[0m\n";
+}
+echo "test 2 : ";
+$req = shell_exec('./ex12/search_it!.php toto "key1:val1" "key2:val2" "toto:42" ');
+if ($req == "42\n") {
+	echo "\033[32m[OK]\033[0m\n";
+} else {
+	echo "\033[31m[FAUX]\033[0m\n";
+}
 
-// echo "test 3 : ";
-// $req = shell_exec('./ex12/search_it!.php "0" "key1:val1" "key2:val2" "0:hop" ');
-// if ($req == "hop\n") {
-// 	echo "\033[32m[OK]\033[0m\n";
-// } else {
-// 	echo "\033[31m[FAUX]\033[0m\n";
-// }
+echo "test 3 : ";
+$req = shell_exec('./ex12/search_it!.php "0" "key1:val1" "key2:val2" "0:hop" ');
+if ($req == "hop\n") {
+	echo "\033[32m[OK]\033[0m\n";
+} else {
+	echo "\033[31m[FAUX]\033[0m\n";
+}
 
-// echo "test 4 : ";
-// $req = shell_exec('./ex12/search_it!.php toto "toto:val1" "key2:val2" "toto:42"');
-// if ($req == "42\n") {
-// 	echo "\033[32m[OK]\033[0m\n";
-// } else {
-// 	echo "\033[31m[FAUX]\033[0m\n";
-// }
+echo "test 4 : ";
+$req = shell_exec('./ex12/search_it!.php toto "toto:val1" "key2:val2" "toto:42"');
+if ($req == "42\n") {
+	echo "\033[32m[OK]\033[0m\n";
+} else {
+	echo "\033[31m[FAUX]\033[0m\n";
+}
 
-// echo "test 5 : ";
-// $req = shell_exec('./ex12/search_it!.php  "toto" "key1:val1" "key2:val2" "0:hop"');
-// if ($req == "") {
-// 	echo "\033[32m[OK]\033[0m\n";
-// } else {
-// 	echo "\033[31m[FAUX]\033[0m\n";
-// }
+echo "test 5 : ";
+$req = shell_exec('./ex12/search_it!.php  "toto" "key1:val1" "key2:val2" "0:hop"');
+if ($req == "") {
+	echo "\033[32m[OK]\033[0m\n";
+} else {
+	echo "\033[31m[FAUX]\033[0m\n";
+}
 
 // echo "\033[35m-------------------------------------------ex13------------------------------------\033[0m\n";
 // echo "test 1 : ";

@@ -1,4 +1,4 @@
 <?php
-    header('Content-Type: text/html; charset=utf-8');
-    echo '<html><body>Hello</body></html>' . "\n"
+    header("Content-type: text/plain");
+    echo "<html><body>Hello</body></html>\n"
 ?>
