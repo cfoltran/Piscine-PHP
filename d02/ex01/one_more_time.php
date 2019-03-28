@@ -7,7 +7,7 @@
         $check = 0;
         if (!preg_match('/^((((L|l)un|(M|m)(ar|ercre)|(J|j)eu|(V|v)endre|(S|s)ame)(di))|((D|d)imanche))$/', $param[0]))
             ++$check;
-        if (!($param[1] >= 1 && $param[1] <= 31))
+        if (!preg_match('/[1-30]$/', $param[1]))
             ++$check;
         if (!($monthi = preg_grep("/^" . $param[2] . "$/", array_map('ucfirst', $months))))
             ++$check;
