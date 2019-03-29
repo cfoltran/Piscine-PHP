@@ -74,9 +74,26 @@
 echo "\033[35m-------------------------------------------ex05------------------------------------\033[0m\n";
 echo "test 1 : ";
 $req = shell_exec("curl --head 'http://" . $computer . ".42.fr:8100/ex05/read_img.php' | cat -e");
-$rep = "HTTP/1.1 200 OK^M\$\nHost: e1r9p8.42.fr:8100^M\$\nConnection: close^M\$\nX-Powered-By: PHP/5.6.30^M\$\nContent-type:image/png^M\$\n^M\$\n";
+$rep = "HTTP/1.1 200 OK^M\$\nHost: e1r9p10.42.fr:8100^M\$\nConnection: close^M\$\nX-Powered-By: PHP/5.6.30^M\$\nContent-type:image/png^M\$\n^M\$\n";
 if ($req == $rep) {
 	echo "\033[32mREAD IMG [OK]\033[0m\n";
+} else {
+	echo "\033[31m[FAUX]\033[0m\n";
+}
+
+echo "\033[35m-------------------------------------------ex06------------------------------------\033[0m\n";
+echo "test 1 : ";
+$req = shell_exec("curl --user zaz:jaimelespetitsponeys http://e1r9p10.42.fr:8100/ex06/members_only.php | head -n 2");
+if ($req == "<html><body>\nBonjour Zaz<br />\n") {
+	echo "\033[32mLINE 1->2 [OK]\033[0m\n";
+} else {
+	echo "\033[31m[FAUX]\033[0m\n";
+}
+
+echo "test 2 : ";
+$req = shell_exec("curl --user zaz:jaimelespetitsponeys http://e1r9p10.42.fr:8100/ex06/members_only.php | tail -n 1");
+if ($req == "</body></html>\n") {
+	echo "\033[32mLAST LINE OK [OK]\033[0m\n";
 } else {
 	echo "\033[31m[FAUX]\033[0m\n";
 }
