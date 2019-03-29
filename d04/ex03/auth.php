@@ -1,6 +1,6 @@
 <?php
     function    auth($login, $passwd) {
-        if (!$passwd || !$login)
+        if ($passwd === "" || $login === "")
             return (false);
         $users = unserialize(file_get_contents('../private/passwd'));
         if ($users)

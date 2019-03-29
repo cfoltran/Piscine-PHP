@@ -1,18 +1,13 @@
-<?php
+<?php  
   session_start();
-  if ($_GET && isset($_GET['submit']) && $_GET['submit'] === 'OK')
-  {
-    if (!empty($_GET['login']) && isset($_GET['login']))
+  // Add GET field if exists
+  if ($_GET['submit'] === 'OK' && $_GET['login'] !== NULL && $_GET['passwd'] !== NULL) {
       $_SESSION['login'] = $_GET['login'];
-    if (!empty($_GET['passwd']) && isset($_GET['passwd']))
       $_SESSION['passwd'] = $_GET['passwd'];
   }
-  $login = '';
-  $pwd = '';
-  if ($_SESSION['login'])
-    $login = $_SESSION['login'];
-  if ($_SESSION['passwd'])
-    $pwd = $_SESSION['passwd'];
+  // if SESSION is set set two variables, then inject into html
+  $login = ($_SESSION['login'] !== NULL) ? $_SESSION['login'] : '';
+  $passwd = ($_SESSION['passwd'] !== NULL) ? $_SESSION['passwd'] : '';
 ?>
 <!doctype html>
 <html lang="fr-FR">
@@ -25,7 +20,7 @@
     <form method="GET" action="">
       Identifiant: <input type="text" class="form-control" name="login" id="login" placeholder="Username" value="<?=$login?>">
       <br/>
-      Mot de passe: <input type="password" class="form-control" name="passwd" id="passwd" placeholder="Password" value="<?=$pwd?>">
+      Mot de passe: <input type="password" class="form-control" name="passwd" id="passwd" placeholder="Password" value="<?=$passwd?>">
       <input type="submit" name="submit" value="OK"/>
     </form>
   </body>

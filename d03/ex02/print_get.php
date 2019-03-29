@@ -1,5 +1,7 @@
+#!/usr/bin/php
+
 <?php
-    if ($_GET !== NULL)
-        foreach ($_GET as $key => $value)
+    foreach ($_GET as $key => $value)
+        if ($value != NULL)
             echo $key . ": " . $value . "\n";
 ?>
