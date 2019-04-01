@@ -7,15 +7,14 @@
         public $co;
 
 		public function __construct() {
-			$this->host = "192.168.99.100";
-			$this->user = "adm";
-			$this->passwd = "1DvNBIYPxvAixJ1I";
-			$this->db = "db_fakir";
+			$this->host = "localhost ";
+			$this->user = "rushuser";
+			$this->passwd = "Kerrigan";
+			$this->db = "rushdb";
 		}
 
         public function login() {
-            $this->co = mysqli_connect($this->host, $this->user, $this->passwd, $this->db, 3306)
-            or die("Error : failed to connect to the server");
+            $this->co = mysqli_connect($this->host, $this->user, $this->passwd, $this->db, 3306);
 			return $this->co;
         }
 

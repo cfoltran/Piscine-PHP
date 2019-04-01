@@ -1,1 +1,6 @@
-UPDATE ft_table SET date_de_creation = ADDDATE(date_de_creation, INTERVAL 20 year) WHERE id > 5;
+UPDATE
+    ft_table
+SET
+    creation_date = DATE_ADD(creation_date, INTERVAL 20 YEAR)
+WHERE
+    id > 5;

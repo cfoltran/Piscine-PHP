@@ -1,1 +1,6 @@
-SELECT REVERSE(telephone) AS 'enohpelet' FROM distrib WHERE telephone LIKE '05%';
+SELECT
+    REVERSE(SUBSTRING(phone_number, 2, 10)) AS 'rebmunenohp'
+FROM
+    distrib
+WHERE
+    phone_number LIKE '05%';

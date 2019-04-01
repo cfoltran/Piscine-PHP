@@ -1,1 +1,13 @@
-SELECT F.nom AS 'NOM', F.prenom, A.prix FROM membre AS M INNER JOIN fiche_personne AS F ON F.id_perso=M.id_fiche_perso INNER JOIN abonnement AS A ON A.id_abo=M.id_abo WHERE A.prix > 42 ORDER BY F.nom, F.prenom;
+SELECT
+    UPPER(U.last_name) AS 'NAME',
+    U.first_name,
+    S.price
+FROM
+    member AS M
+    INNER JOIN user_card  AS U ON U.id_user = M.id_user_card
+    INNER JOIN subscription AS S ON S.id_sub = M.id_sub
+WHERE
+    S.price > 42
+ORDER BY
+    U.last_name ASC,
+    U.first_name ASC;

@@ -1,1 +1,16 @@
-SELECT COUNT(date) FROM historique_membre WHERE (date > '2006-10-06' AND date < '2007-07-27') OR DATE(date) LIKE '%-12-24';
+SELECT
+    COUNT(*) AS 'films'
+FROM
+    film
+    JOIN member_history
+WHERE
+    (
+        member_history.date BETWEEN '2006-10-30'
+        AND '2007-07-27'
+        OR (
+            MONTH(member_history.date) = 12
+            AND DAY(member_history.date) = 24
+    )
+)
+AND member_history.id_film = film.id_film;
+

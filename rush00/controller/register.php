@@ -1,6 +1,14 @@
 <?php
-    require_once("../model/database.php");
-    require_once("../model/user.php");
-    $co = new Database();
-    $co = $co->login();
+    $host = "localhost";
+    $user = "root";
+    $pass = "rushrush";
+
+    // Create connection
+    $conn = mysqli_connect($host, $user, $pass, 3308);
+
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    echo "Connected successfully";
 ?>
