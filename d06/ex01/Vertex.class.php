@@ -5,72 +5,82 @@
         private $_x;
         private $_y;
         private $_z;
-        private $_w = 1;
+        private $_w = 1.00;
         private $_color;
-        static  $verbose = false;
+
+        static $verbose = false;
         
         function __construct($vertex) {
-            $this->$_x = $vertex['x'];
-            $this->$_y = $vertex['y'];
-            $this->$_x = $vertex['z'];
+            $this->_x = $vertex['x'];
+            $this->_y = $vertex['y'];
+            $this->_z = $vertex['z'];
             if (!empty($vertex['w'] && isset($vertex['w'])))
-                $this->$_w = $vertex['w'];
+                $this->_w = $vertex['w'];
             if (!empty($vertex['color']) && isset($vertex['color']))
-                $this->$_color = $vertex['color'];
+                $this->_color = $vertex['color'];
             else
-                $_color = new Color([
+                $this->_color = new Color([
                     'red' => 255,
                     'green' => 255,
                     'blue' => 255
                 ]);
-            if (self::verbose)
-                print("construct successfully\n");
+            if (self::$verbose)
+                printf("Vertex( x: %0.2f, y: %0.2f, z: %0.2f, w: %0.2f, Color( red: %3d, green: %3d, blue: %3d ) ) constructed\n", $this->_x, $this->_y, $this->_z, $this->_w, $this->_color->red, $this->_color->green, $this->_color->blue);
         }
 
-        function setX($x) {
+        public function setX($x) {
             $this->_x = $x;
         }
 
-        function setY($y) {
+        public function setY($y) {
             $this->_y = $y;
         }
 
-        function setZ($z) {
+        public function setZ($z) {
             $this->_z = $z;
         }
 
-        function setW($w) {
+        public function setW($w) {
             $this->_w = $w;
         }
 
-        function __getX() {
+        public function getX() {
             return ($this->_x);
         }
 
-        function __getY() {
+        public function getY() {
             return ($this->_y);
         }
 
-        function __getZ() {
+        public function getZ() {
             return ($this->_z);
         }
 
-        function __getW() {
+        public function getW() {
             return ($this->_w);
         }
 
-        function __getColor() {
+        public function getColor() {
             return ($this->color);
         }
 
-        function __setColor($color) {
-            if (self::verbose)
+        public function __setColor($color) {
+            if (self::$verbose)
                 $this->color = $color; 
         }
 
-        function toString() {
-            if (self::verbose)
-                printf("toString\n");
+        function __toString() {
+            if (self::$verbose)
+                return (vsprintf("Vertex( x: %0.2f, y: %0.2f, z:%0.2f, w:%0.2f, Color( red: %3d, green: %3d, blue: %3d ) )", [
+                        $this->_x,
+                        $this->_y,
+                        $this->_z,
+                        $this->_w,
+                        $this->_color->red,
+                        $this->_color->green, 
+                        $this->_color->blue
+                    ]));
+            return (vsprintf("Vertex( x: %0.2f, y: %0.2f, z:%0.2f, w:%0.2f )", array($this->_x, $this->_y, $this->_z, $this->_w)));
         }
 
         static function doc() {
@@ -81,9 +91,9 @@
             fclose($fd);
         }
 
-        function __descruct() {
-            if (self::verbose)
-                printf("destruct successfully\n");
+        function __destruct() {
+            if (self::$verbose)
+                printf("Vertex( x: %0.2f, y: %0.2f, z: %0.2f, w: %0.2f, Color( red: %3d, green: %3d, blue: %3d ) ) destructed\n", $this->_x, $this->_y, $this->_z, $this->_w, $this->_color->red, $this->_color->green, $this->_color->blue);
         }
     }
 ?>
