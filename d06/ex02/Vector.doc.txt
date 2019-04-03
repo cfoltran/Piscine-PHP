@@ -1,4 +1,45 @@
-
 <- Vector ----------------------------------------------------------------------
-Your documentation here.
+The Vector class handles x, y, z, points of the Vector, w for it's weigth
+
+An instance can be contructed from either with kwargs :
+
+The color is optionnal, by default it's set rgb(255, 255, 255)
+$blue = new Color( array( 'red' =>   0, 'green' =>   0, 'blue' => 255 ) );
+new Vector( 'x' => 1.2, 'y' => 4.4, 'z' => 12, 'color' => $red );
+
+X, Y, Z constitutives a point of a plan.
+X : abscissa point
+Y : ordered point
+Z : depth point
+W : weigth of the Vector
+
+The class provided the following methods : 
+
+function setX(Int $x);
+Modify the attribute X of the instance
+
+function setX(Int $y);
+Modify the attribute Y of the instance
+
+function setX(Int $z);
+Modify the attribute Z of the instance
+
+function setX(Int $w);
+Modify the attribute W of the instance
+
+function __getX()
+return the attribute X of the instance
+
+function __getY()
+return the attribute Y of the instance
+
+function __getZ()
+return the attribute Z of the instance
+
+function __getW()
+return the attribute W of the instance
+
+function __setColor(Color $color)
+Return the attribute $color of the instance
+
 ---------------------------------------------------------------------- Vector ->
