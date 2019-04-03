@@ -5,7 +5,7 @@
         private $_x;
         private $_y;
         private $_z;
-        private $_w = 1.00;
+        private $_w;
         private $_color;
 
         static $verbose = false;
@@ -16,6 +16,8 @@
             $this->_z = $vertex['z'];
             if (!empty($vertex['w'] && isset($vertex['w'])))
                 $this->_w = $vertex['w'];
+            else
+                $this->_w = 1;
             if (!empty($vertex['color']) && isset($vertex['color']))
                 $this->_color = $vertex['color'];
             else
