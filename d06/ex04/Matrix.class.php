@@ -16,7 +16,7 @@
         private $_near;
         private $_far;
         private $_ratio;
-        private $_matrix =  [   
+        public  $matrix =  [   
                                 [0, 0, 0, 0],
                                 [0, 0, 0, 0],
                                 [0, 0, 0, 0],
