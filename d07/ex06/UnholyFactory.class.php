@@ -18,7 +18,7 @@
 
         public function fabricate($rf) {
             if (!isset($this->_fighter[$rf])) {
-                echo "(Factory already absorbed a fighter of type " . $rf . ")\n";
+                echo "(Factory hasn't absorbed any fighter of type " . $rf . ")\n";
             } else {
                 echo "(Factory fabricates a fighter of type " . $rf . ")\n";
                 return $this->_fighter[$rf];
