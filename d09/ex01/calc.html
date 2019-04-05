@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calc</title>
+</head>
+
+<style>
+    html {
+        background-color: black;
+    }
+
+    .calc {
+        height: 200px;
+        width: 30%;
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+    }
+</style>
+
+<body>
+    <div class="calc">
+        <input type="text" name="" id="member1" placeholder="nombre 1">
+        <select name="operand" id="">
+            <option value="add">+</option>
+            <option value="sub">-</option>
+            <option value="pro">*</option>
+            <option value="div">/</option>
+            <option value="mod">%</option>
+        </select>
+        <input type="text" name="" id="member2" placeholder="nombre 2">
+        <input type="submit" id="sub" value="Try me">
+    </div>
+</body>
+</html>
+
+<script>
+    var inputs = document.querySelectorAll('input');
+    
+    inputs[2].addEventListener("click", callback => {
+        let n1 = parseInt(inputs[0].value);
+        let n2 = parseInt(inputs[1].value);
+        var operand = document.querySelector('select').value;
+        let res = 0;
+        if (n1 >= 0 && n2 >= 0) {
+            res = (operand === "add") ? n1 + n2 : res;
+            res = (operand === "sub") ? n1 - n2 : res;
+            res = (operand === "pro") ? n1 * n2 : res;
+            if (n2 !== 0) {
+                res = (operand === "mod") ? n1 % n2 : res;
+                res = (operand === "div") ? n1 / n2 : res;
+            } else {
+                alert("It’s over 9000!");
+                return ;
+            }
+            
+            alert(res);
+        } else {
+            alert("Error :(");
+        }
+        inputs[0].value = '';
+        inputs[1].value = '';
+    });
+
+    setInterval(function() {
+        console.log('Please, use me ...');
+        alert('Please, use me ...');
+    }, 30000);
+</script>

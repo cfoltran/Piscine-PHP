@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo</title>
+</head>
+<style>
+
+    html {
+        margin:0;
+        padding:0;
+        background: url("https://img.ohmymag.com/article/chat/chat-persan_9352a51f53264bd3d044d1cec6feb0f6f8e2da31.jpg") no-repeat center fixed; 
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+
+    #ft_list {
+        overflow: auto;
+        color: white;
+        padding: 2%;
+        height: 200px;
+        width: 30%;
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.493);
+        border-radius: 4px;
+        position: absolute;
+    }
+
+    #confirmation {
+        display: none;
+        color: white;
+        padding: 2%;
+        height: 60px;
+        width: 15%;
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.493);
+        border-radius: 4px;
+        position: absolute;
+    }
+
+    #new {
+        float: right;
+    }
+
+    #toDo {
+        padding: 10px;
+    }
+
+    #action {
+        float: left;
+    }
+</style>
+<body>
+    <h1 style="color:white">Tout doux liste</h1>
+    <div id="ft_list">
+        <input id="new" type="button" value="New">
+        <div id="toDo"></div>
+    </div>
+    <div id="confirmation">
+        Êtes-vous sûr de vouloir supprimer cette douceur ?
+        <div class="action">
+            <input type="button" value="Oui">
+            <input type="button" value="Non">
+        </div>
+    </div>
+</body>
+</html>
+<script src="todo.js"></script>

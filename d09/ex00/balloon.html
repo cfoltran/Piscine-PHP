@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Balloon</title>
+</head>
+
+<style>
+    html {
+        background-color: black;
+    }
+
+    #balloon {
+        background-color: rgb(255, 0, 0);
+        border-radius: 100%;
+        height: 200px;
+        width: 200px;
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+    }
+</style>
+
+<body>
+    <div id="balloon"></div>
+</body>
+</html>
+
+<script>
+    var balloon = document.getElementById('balloon');
+    var color = ["rgb(255, 0, 0)", "rgb(0, 255, 0)", "rgb(0, 0, 255)"];
+    var size = 200;
+    var index = 0;
+
+    balloon.addEventListener("click", balloon => {
+        if (size > 420) {
+            size = 0;
+            var counter = 190;
+            var cooldown = setInterval(function() {
+                counter--;
+                size += 1;
+                self.balloon.style.height = size + 'px';
+                self.balloon.style.width = size + 'px';
+                if (counter === 0) {
+                    clearInterval(cooldown);
+                }
+            }, 10);
+        } 
+        self.index = (self.index < 2) ? self.index + 1 : 0;
+        self.size += 10;
+        self.balloon.style.height = size + 'px';
+        self.balloon.style.width = size + 'px';
+        self.balloon.style.backgroundColor = color[self.index];
+    });
+
+    balloon.addEventListener("mouseout", balloon => {
+        if (size > 200) {
+            size -= 10;
+            self.index = (self.index > 0) ? self.index - 1 : 2;
+            self.balloon.style.height = size + 'px';
+            self.balloon.style.width = size + 'px';
+            self.balloon.style.backgroundColor = color[self.index];
+        }
+    });
+</script>
