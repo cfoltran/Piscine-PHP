@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Balloon</title>
 </head>
 
@@ -30,20 +31,21 @@
 </html>
 
 <script>
-    var balloon = document.getElementById('balloon');
     var color = ["rgb(255, 0, 0)", "rgb(0, 255, 0)", "rgb(0, 0, 255)"];
     var size = 200;
     var index = 0;
 
-    balloon.addEventListener("click", () => {
+    $('#balloon').click(() => {
         if (size > 420) {
             size = 0;
             var counter = 190;
             var cooldown = setInterval(function() {
                 counter--;
                 size += 1;
-                balloon.style.height = size + 'px';
-                balloon.style.width = size + 'px';
+                $('#balloon').css({
+                    "height": size + 'px',
+                    "width": size + 'px'
+                });
                 if (counter === 0) {
                     clearInterval(cooldown);
                 }
@@ -51,18 +53,22 @@
         } 
         index = (index < 2) ? index + 1 : 0;
         size += 10;
-        balloon.style.height = size + 'px';
-        balloon.style.width = size + 'px';
-        balloon.style.backgroundColor = color[index];
+        $('#balloon').css({
+            "height": size + 'px',
+            "width": size + 'px',
+            "background-color": color[index]
+        });
     });
 
-    balloon.addEventListener("mouseout", () => {
+    $('#balloon').mouseout(() => {
         index = (index > 0) ? index - 1 : 2;
-        balloon.style.backgroundColor = color[index];
+        $('#balloon').css({"background-color": color[index]});
         if (size > 200) {
             size -= 10;
-            balloon.style.height = size + 'px';
-            balloon.style.width = size + 'px';
+            $('#balloon').css({
+                "height": size + 'px',
+                "width": size + 'px',
+            });
         }
     });
 </script>

@@ -1,25 +1,37 @@
-let button = document.querySelectorAll('input');
-let toDo = document.getElementById('toDo');
-let modal = document.getElementById('confirmation');
 
-button[0].addEventListener("click", callback => {
-    let toAdd = prompt("Ajouter une douceur");
-    let node = toDo.cloneNode(true);
-    node.textContent = toAdd.toUpperCase();
-    toDo.prepend(node);
-});
+var ft_list = document.getElementById('ft_list');
+var modal = document.getElementById('confirmation');
+let inputs = document.querySelectorAll('input');
+var cookies = [];
 
-function remove() {
-    this.parentNode.parentNode.removeChild(this.parentNode);
+function del() {
+    if (confirm("Supprimer cette douceur ?"))
+        this.parentElement.removeChild(this);
 }
 
-toDo.addEventListener("click", callback => {
-    modal.style.display = "block";
-    button[1].addEventListener("click", callback => {
-        
-    });
-});
+let add = (todo) => {
+    var newDiv = document.createElement("div");
+    newDiv.innerHTML = todo;
+    newDiv.addEventListener("click", del);
+    ft_list.prepend(newDiv);
+}
 
-button[2].addEventListener("click", callback => {
-    modal.style.display = "none";
+window.onload = () => {
+    cookie = (document.cookie) ? JSON.parse(document.cookie) : null;
+    cookie.forEach((e) => {
+        add(e);
+    });
+};
+
+inputs[0].addEventListener('click', () => {
+    event.preventDefault();
+
+    let input = prompt("Ajouter une nouvelle douceur");
+    if (input.length === 0)
+        return ;
+    add(input);
+    var newCookie = [];
+    for (var i = 0; i < ft_list.childElementCount; i++)
+        newCookie.unshift(ft_list.children[i].innerHTML);
+    document.cookie = JSON.stringify(newCookie);
 });
